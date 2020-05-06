@@ -5,14 +5,22 @@
   "author": "Olym <1013752750@qq.com>",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "dev": "webpack-dev-server --host 0.0.0.0 --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "lint": "eslint --ext .js,.vue src",
     "build": "node build/build.js"
   },
   "dependencies": {
+    "ant-design-vue": "^1.5.3",
+    "axios": "^0.19.2",
+    "echarts": "^4.7.0",
+    "three": "^0.115.0",
+    "v-charts": "^1.19.0",
+    "video.js": "^7.7.5",
+    "videojs-contrib-hls": "^5.15.0",
     "vue": "^2.5.2",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "vue-video-player": "^5.0.2"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
