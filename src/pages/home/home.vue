@@ -1,26 +1,16 @@
 <template>
   <a-layout id="components-layout-demo-fixed-sider">
     <a-layout-sider :style="{ overflow: 'auto', height: '100vh', position: 'fixed', left: 0 }">
-      <div class="logo">
-
+      <div class="logo" style="color: white;text-align: center">
+        This is LOGO
       </div>
       <a-menu theme="dark" mode="inline" :defaultSelectedKeys="['4']">
-        <!-- <a-menu-item key="1">
-          <a-icon type="user" />
-          <span class="nav-text">
-            <router-link to="/nav1" style="color: white">nav 1</router-link>
-          </span>
-        </a-menu-item> -->
 
         <a-sub-menu key="menu1">
           <span slot="title"><a-icon type="user"/><span>园区总览</span></span>
           <a-menu-item key="sub1"><router-link to="/overall" style="color: white">总览页</router-link></a-menu-item>
           <a-menu-item key="sub2"><router-link to="/overall_log" style="color: white">工作日志总览</router-link></a-menu-item>
         </a-sub-menu>
-        <!-- <a-menu-item key="2">
-          <a-icon type="video-camera" />
-          <span class="nav-text">nav 2</span>
-        </a-menu-item> -->
         <a-sub-menu key="manu2">
           <span slot="title"><a-icon type="user" /><span>监控场景列表</span></span>
           <a-menu-item key="sub3">车间详情</a-menu-item>
@@ -49,7 +39,7 @@
     <a-layout :style="{ marginLeft: '200px' }">
       <a-layout-header :style="{ background: '#fff', padding: 0 }" />
       <a-layout-content :style="{overflow: 'initial', padding: 0, margin: 0}">
-        <div :style="{background: 'white', textAlign: 'center' }">
+        <div :style="{background: 'rgb(225, 240, 255)', textAlign: 'center' , padding: '24px'}">
           <router-view></router-view>
         </div>
       </a-layout-content>

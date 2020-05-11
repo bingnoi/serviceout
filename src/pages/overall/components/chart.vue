@@ -1,9 +1,13 @@
 <template>
-  <div class="chart-wrapper">
-    <div style="padding: 10px;font-size: 20px;text-align:left; font-weight: 700">安全达标率</div>
-    <hr style="color: #eee"/>
-    <ve-line class="chart" height="60vh" :data="chartData" :settings="chartSettings"></ve-line>
-  </div>
+<a-row>
+  <a-col :span="24">
+    <div class="chart-wrapper">
+      <div style="padding: 10px;font-size: 20px;text-align:left; font-weight: 700">安全达标率</div>
+      <hr style="color: #eee"/>
+      <ve-line class="chart" height="60vh" :data="chartData" :settings="chartSettings"></ve-line>
+    </div>
+  </a-col>
+</a-row>
 </template>
 
 <script>
@@ -33,7 +37,6 @@ export default {
 
 <style scoped>
 .chart-wrapper{
-  width: 700px;
   margin: 30px;
   background-color:rgb(255, 255, 255);
   border-radius: 5px;

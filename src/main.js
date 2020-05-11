@@ -7,6 +7,7 @@ import Antd from 'ant-design-vue'
 import 'ant-design-vue/dist/antd.css'
 import VideoPlayer from 'vue-video-player'
 import VCharts from 'v-charts'
+import 'videojs-flash'
 Vue.config.productionTip = false
 
 Vue.use(Antd)

@@ -1,7 +1,7 @@
 <template>
   <div>
-    <chart></chart>
     <vio-manage></vio-manage>
+    <chart></chart>
   </div>
 </template>
 
