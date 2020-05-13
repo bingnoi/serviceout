@@ -4,7 +4,11 @@ import Router from 'vue-router'
 import Home from '@/pages/home/home'
 import overall from '@/pages/overall/overall.vue'
 import overallLog from '@/pages/overall_Log/overall_Log'
+import wsList from '@/pages/WSlist/wslist'
 import site from '@/pages/site/site'
+import workerInfo from '@/pages/worker_info/worker_info.vue'
+import wsInfo from '@/pages/ws_info/ws_info'
+
 Vue.use(Router)
 
 export default new Router({
@@ -13,7 +17,7 @@ export default new Router({
       path: '/',
       name: 'Home',
       component: Home,
-      redirect: '/overall',
+      redirect: '/wslist',
       children: [
         {
           path: 'overall',
@@ -26,9 +30,24 @@ export default new Router({
           component: overallLog
         },
         {
+          path: 'wslist',
+          name: 'wslist',
+          component: wsList
+        },
+        {
           path: 'site',
           name: 'site',
           component: site
+        },
+        {
+          path: 'workerInfo',
+          name: 'workerInfo',
+          component: workerInfo
+        },
+        {
+          path: 'wsInfo',
+          name: 'wsInfo',
+          component: wsInfo
         }
       ]
     }
