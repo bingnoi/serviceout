@@ -8,6 +8,8 @@ import wsList from '@/pages/WSlist/wslist'
 import site from '@/pages/site/site'
 import workerInfo from '@/pages/worker_info/worker_info.vue'
 import wsInfo from '@/pages/ws_info/ws_info'
+import vioManage from '@/pages/viomanage/viomanage'
+import vioDetail from '@/pages/vioDetail/vioDetail'
 
 Vue.use(Router)
 
@@ -48,6 +50,16 @@ export default new Router({
           path: 'wsInfo',
           name: 'wsInfo',
           component: wsInfo
+        },
+        {
+          path: 'vioManage',
+          name: 'vioManage',
+          component: vioManage
+        },
+        {
+          path: 'vioDetail',
+          name: 'vioDetail',
+          component: vioDetail
         }
       ]
     }

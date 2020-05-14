@@ -32,7 +32,7 @@
     </a-list>
   </div>
   <div class="pie-container">
-    <ve-pie :data="pieData" width='500px' style="margin-top: 30px"></ve-pie>
+    <ve-pie :data="pieData" width='400px' style="margin-top: 30px"></ve-pie>
   </div>
 </div>
 </template>
@@ -80,6 +80,7 @@ export default {
   height: 400px;
   position: fixed;
   border-radius: 5px;
-  right: 50px
+  right: 50px;
+  border: 1px solid rgb(180, 180, 180)
 }
 </style>

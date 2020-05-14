@@ -1,10 +1,10 @@
 <template>
-  <div></div>
+  <div>detail testing</div>
 </template>
 
 <script>
 export default {
-  name: 'ws_info'
+  name: 'vioDetail'
 }
 </script>
 

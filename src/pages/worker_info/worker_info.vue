@@ -1,6 +1,6 @@
 <template>
-  <div>
-<a-table :data-source="data" :columns="columns">
+<div class="list-container">
+  <a-table :data-source="data" :columns="columns">
     <div
       slot="filterDropdown"
       slot-scope="{ setSelectedKeys, selectedKeys, confirm, clearFilters, column }"
@@ -55,7 +55,7 @@
     </template>
   </a-table>
 
-  </div>
+</div>
 </template>
 
 <script>
@@ -64,25 +64,35 @@ const data = [
     key: '1',
     name: 'John Brown',
     age: 32,
-    address: 'New York No. 1 Lake Park'
+    wsID: '1000',
+    vioTime: 2
   },
   {
     key: '2',
     name: 'Joe Black',
     age: 42,
-    address: 'London No. 1 Lake Park'
+    wsID: '1000',
+    vioTime: 2,
+    workDay: 31,
+    showDay: 30
   },
   {
     key: '3',
     name: 'Jim Green',
     age: 32,
-    address: 'Sidney No. 1 Lake Park'
+    wsID: '1001',
+    vioTime: 2,
+    workDay: 31,
+    showDay: 30
   },
   {
     key: '4',
     name: 'Jim Red',
     age: 32,
-    address: 'London No. 2 Lake Park'
+    wsID: '1003',
+    vioTime: 2,
+    workDay: 31,
+    showDay: 30
   }
 ]
 export default {
@@ -95,7 +105,7 @@ export default {
       searchedColumn: '',
       columns: [
         {
-          title: 'Name',
+          title: '姓名',
           dataIndex: 'name',
           key: 'name',
           scopedSlots: {
@@ -139,16 +149,38 @@ export default {
           }
         },
         {
-          title: 'Address',
-          dataIndex: 'address',
-          key: 'address',
+          title: '车间ID',
+          dataIndex: 'wsID',
+          key: 'wsID',
           scopedSlots: {
             filterDropdown: 'filterDropdown',
             filterIcon: 'filterIcon',
             customRender: 'customRender'
           },
           onFilter: (value, record) =>
-            record.address
+            record.wsID
+              .toString()
+              .toLowerCase()
+              .includes(value.toLowerCase()),
+          onFilterDropdownVisibleChange: visible => {
+            if (visible) {
+              setTimeout(() => {
+                this.searchInput.focus()
+              })
+            }
+          }
+        },
+        {
+          title: '违规次数',
+          dataIndex: 'vioTime',
+          key: 'vioTime',
+          scopedSlots: {
+            filterDropdown: 'filterDropdown',
+            filterIcon: 'filterIcon',
+            customRender: 'customRender'
+          },
+          onFilter: (value, record) =>
+            record.vioTime
               .toString()
               .toLowerCase()
               .includes(value.toLowerCase()),
@@ -180,5 +212,11 @@ export default {
 </script>
 
 <style scoped>
-
+.list-container{
+  width: 80%;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 0 auto
+}
 </style>
