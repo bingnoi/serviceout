@@ -10,6 +10,7 @@ import workerInfo from '@/pages/worker_info/worker_info.vue'
 import wsInfo from '@/pages/ws_info/ws_info'
 import vioManage from '@/pages/viomanage/viomanage'
 import vioDetail from '@/pages/vioDetail/vioDetail'
+import startLog from '@/pages/startLog/startLog'
 
 Vue.use(Router)
 
@@ -60,6 +61,11 @@ export default new Router({
           path: 'vioDetail',
           name: 'vioDetail',
           component: vioDetail
+        },
+        {
+          path: 'startLog',
+          name: 'startLog',
+          component: startLog
         }
       ]
     }

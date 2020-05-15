@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="list-container">
-      <a-card v-for="item in vioList" :key="item.id" :title="'测试事件' + item.id" style="width: 80%;margin: 30px auto">
+      <a-card v-for="item in vioList" :key="item.id" :title="'测试事件' + item.id" style="width: 80%;margin: 10px auto">
         <router-link to="vioDetail" tag="a" slot="extra">more</router-link>
         <div>
           <span style="margin-right: 50px"><b>所属车间id:</b>   {{item.wsID}}</span>
