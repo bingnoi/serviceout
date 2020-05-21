@@ -1,6 +1,6 @@
 <template>
 <div style="width: 100%; display: flex;">
-  <div style="width: 58%;">
+  <div style="width: 100%;">
 
     <a-list item-layout="vertical"
             size="large"
@@ -27,12 +27,10 @@
                   :type="item.state?'check':'close'"
                   :style="item.state?'color: green':'color: red'"></a-icon>
                   <br/><br/>
-      <router-link to="/site">访问{{item.name}}</router-link>
+      <router-link to="/site">现场监控</router-link><br/><br/>
+      <router-link to="startLog">生成安全日志</router-link>
       </a-list-item>
     </a-list>
-  </div>
-  <div class="pie-container">
-    <ve-pie :data="pieData" width='400px' style="margin-top: 30px"></ve-pie>
   </div>
 </div>
 </template>

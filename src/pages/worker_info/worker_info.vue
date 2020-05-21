@@ -65,7 +65,8 @@ const data = [
     name: 'John Brown',
     age: 32,
     wsID: '1000',
-    vioTime: 2
+    vioTime: 2,
+    entryTime: '2018 1 1'
   },
   {
     key: '2',
@@ -74,7 +75,8 @@ const data = [
     wsID: '1000',
     vioTime: 2,
     workDay: 31,
-    showDay: 30
+    showDay: 30,
+    entryTime: '2018 1 1'
   },
   {
     key: '3',
@@ -83,7 +85,8 @@ const data = [
     wsID: '1001',
     vioTime: 2,
     workDay: 31,
-    showDay: 30
+    showDay: 30,
+    entryTime: '2018 1 1'
   },
   {
     key: '4',
@@ -92,7 +95,8 @@ const data = [
     wsID: '1003',
     vioTime: 2,
     workDay: 31,
-    showDay: 30
+    showDay: 30,
+    entryTime: '2018 1 1'
   }
 ]
 export default {
@@ -191,7 +195,51 @@ export default {
               })
             }
           }
+        },
+        {
+          title: '入职时间',
+          dataIndex: 'entryTime',
+          key: 'entryTime',
+          scopedSlots: {
+            filterDropdown: 'filterDropdown',
+            filterIcon: 'filterIcon',
+            customRender: 'customRender'
+          },
+          onFilter: (value, record) =>
+            record.vioTime
+              .toString()
+              .toLowerCase()
+              .includes(value.toLowerCase()),
+          onFilterDropdownVisibleChange: visible => {
+            if (visible) {
+              setTimeout(() => {
+                this.searchInput.focus()
+              })
+            }
+          }
         }
+        // {
+        //   title: '基础工资',
+        //   dataIndex: 'salary',
+        //   key: 'salary',
+        //   scopedSlots: {
+        //     filterDropdown: 'filterDropdown',
+        //     filterIcon: 'filterIcon',
+        //     customRender: 'customRender'
+        //   },
+        //   onFilter: (value, record) =>
+        //     record.vioTime
+        //       .toString()
+        //       .toLowerCase()
+        //       .includes(value.toLowerCase()),
+        //   onFilterDropdownVisibleChange: visible => {
+        //     if (visible) {
+        //       setTimeout(() => {
+        //         this.searchInput.focus()
+        //       })
+        //     }
+        //   }
+        // }
       ]
     }
   },

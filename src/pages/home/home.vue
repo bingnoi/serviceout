@@ -1,6 +1,6 @@
 <template>
   <a-layout id="components-layout-demo-fixed-sider">
-    <a-layout-sider :style="{ overflow: 'auto', height: '100vh', position: 'fixed', left: 0 }">
+    <a-layout-sider :style="{ overflow: 'auto', height: '100vh', position: 'fixed', left: 0}">
       <div class="logo" style="color: white;text-align: center">
         This is LOGO
       </div>
@@ -13,7 +13,6 @@
         <a-sub-menu key="menu-2">
           <span slot="title"><a-icon type="user"/><span>违规管理</span></span>
           <a-menu-item key="menu-2_sub-1"><router-link to="/viomanage" style="color: white">违规记录操作</router-link></a-menu-item>
-          <a-menu-item key="menu-2_sub-2"><router-link to="/startLog" style="color: white">生成开工日志</router-link></a-menu-item>
         </a-sub-menu>
 
         <a-sub-menu key="menu-3">
@@ -24,8 +23,7 @@
 
         <a-sub-menu key="menu-4">
           <span slot="title"><a-icon type="user"/><span>考勤数据库管理</span></span>
-          <a-menu-item key="menu-4_sub-1"><router-link to="/overall" style="color: white">违规记录操作</router-link></a-menu-item>
-          <a-menu-item key="menu-4_sub-2"><router-link to="/overall_log" style="color: white">生成开工日志</router-link></a-menu-item>
+          <a-menu-item key="menu-4_sub-1"><router-link to="/overall" style="color: white">出勤查询</router-link></a-menu-item>
         </a-sub-menu>
 
         <a-sub-menu key="menu1">

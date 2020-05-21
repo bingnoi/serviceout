@@ -58,7 +58,7 @@ export default new Router({
           component: vioManage
         },
         {
-          path: 'vioDetail',
+          path: 'vioDetail/:eventID/:wsID',
           name: 'vioDetail',
           component: vioDetail
         },
