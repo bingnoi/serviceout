@@ -36,7 +36,7 @@
       </a-menu>
     </a-layout-sider>
     <a-layout :style="{ marginLeft: '200px' }">
-      <a-layout-header :style="{ background: '#fff', padding: 0 }" />
+      <!-- <a-layout-header :style="{ background: '#fff', padding: 0 }" /> -->
       <a-layout-content :style="{overflow: 'initial', padding: 0, margin: 0}">
         <div :style="{background: 'rgb(225, 240, 255)', textAlign: 'center' , padding: '24px'}">
           <router-view></router-view>
