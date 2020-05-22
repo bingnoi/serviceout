@@ -1,92 +1,104 @@
 <template>
   <div>
-    <div class="left">
-      <div class="box1">
-        <ve-liquidfill
-          :data="waterchartData"
-          :title="chart1Title"
-          :style="{width:'100%'}"
-          height="250px"
-        ></ve-liquidfill>
-      </div>
-      <div class="box1">
-        <ve-gauge
-          :title="chart2Title"
-          :data="chartattenData"
-          :settings="chartSettings"
-          ref="chartEl"
-          :style="{width:'100%'}"
-          height="250px"
-        ></ve-gauge>
-      </div>
-    </div>
-
-    <div class="box2">
-      <div class="log">
-        <ve-line
-          :title="chart3Title"
-          :legend-visible="false"
-          :data="chartlogData"
-          :settings="chartlogSettings"
-          ref="chartE2"
-          :style="{width:'100%'}"
-          height="300px"
-        ></ve-line>
-      </div>
-      <div class="list-container">
-        <a-table :data-source="data" :columns="columns">
-          <div
-            slot="filterDropdown"
-            slot-scope="{ setSelectedKeys, selectedKeys, confirm, clearFilters, column }"
-            style="padding: 8px"
-          >
-            <a-input
-              v-ant-ref="c => (searchInput = c)"
-              :placeholder="`Search ${column.dataIndex}`"
-              :value="selectedKeys[0]"
-              style="width: 188px; margin-bottom: 8px; display: block;"
-              @change="e => setSelectedKeys(e.target.value ? [e.target.value] : [])"
-              @pressEnter="() => handleSearch(selectedKeys, confirm, column.dataIndex)"
-            />
-            <a-button
-              type="primary"
-              icon="search"
-              size="small"
-              style="width: 90px; margin-right: 8px"
-              @click="() => handleSearch(selectedKeys, confirm, column.dataIndex)"
-            >Search</a-button>
-            <a-button
-              size="small"
-              style="width: 90px"
-              @click="() => handleReset(clearFilters)"
-            >Reset</a-button>
+    <a-row>
+      <div class="left">
+        <a-row>
+          <div class="box1">
+            <ve-liquidfill
+              :data="waterchartData"
+              :title="chart1Title"
+              :style="{width:'100%'}"
+              height="250px"
+            ></ve-liquidfill>
           </div>
-          <a-icon
-            slot="filterIcon"
-            slot-scope="filtered"
-            type="search"
-            :style="{ color: filtered ? '#108ee9' : undefined }"
-          />
-          <template slot="customRender" slot-scope="text, record, index, column">
-            <span v-if="searchText && searchedColumn === column.dataIndex">
-              <template
-                v-for="(fragment, i) in text
+        </a-row>
+        <a-row>
+          <div class="box1">
+            <ve-gauge
+              :title="chart2Title"
+              :data="chartattenData"
+              :settings="chartSettings"
+              ref="chartEl"
+              :style="{width:'100%'}"
+              height="250px"
+            ></ve-gauge>
+          </div>
+        </a-row>
+      </div>
+    </a-row>
+
+    <a-row>
+      <div class="box2">
+        <a-col>
+          <div class="log">
+            <ve-line
+              :title="chart3Title"
+              :legend-visible="false"
+              :data="chartlogData"
+              :settings="chartlogSettings"
+              ref="chartE2"
+              :style="{width:'100%'}"
+              height="300px"
+            ></ve-line>
+          </div>
+        </a-col>
+        <a-col>
+          <div class="list-container">
+            <a-table :data-source="data" :columns="columns">
+              <div
+                slot="filterDropdown"
+                slot-scope="{ setSelectedKeys, selectedKeys, confirm, clearFilters, column }"
+                style="padding: 8px"
+              >
+                <a-input
+                  v-ant-ref="c => (searchInput = c)"
+                  :placeholder="`Search ${column.dataIndex}`"
+                  :value="selectedKeys[0]"
+                  style="width: 188px; margin-bottom: 8px; display: block;"
+                  @change="e => setSelectedKeys(e.target.value ? [e.target.value] : [])"
+                  @pressEnter="() => handleSearch(selectedKeys, confirm, column.dataIndex)"
+                />
+                <a-button
+                  type="primary"
+                  icon="search"
+                  size="small"
+                  style="width: 90px; margin-right: 8px"
+                  @click="() => handleSearch(selectedKeys, confirm, column.dataIndex)"
+                >Search</a-button>
+                <a-button
+                  size="small"
+                  style="width: 90px"
+                  @click="() => handleReset(clearFilters)"
+                >Reset</a-button>
+              </div>
+              <a-icon
+                slot="filterIcon"
+                slot-scope="filtered"
+                type="search"
+                :style="{ color: filtered ? '#108ee9' : undefined }"
+              />
+              <template slot="customRender" slot-scope="text, record, index, column">
+                <span v-if="searchText && searchedColumn === column.dataIndex">
+                  <template
+                    v-for="(fragment, i) in text
             .toString()
             .split(new RegExp(`(?<=${searchText})|(?=${searchText})`, 'i'))"
-              >
-                <mark
-                  v-if="fragment.toLowerCase() === searchText.toLowerCase()"
-                  :key="i"
-                  class="highlight"
-                >{{ fragment }}</mark>
-                <template v-else>{{ fragment }}</template>
+                  >
+                    <mark
+                      v-if="fragment.toLowerCase() === searchText.toLowerCase()"
+                      :key="i"
+                      class="highlight"
+                    >{{ fragment }}</mark>
+                    <template v-else>{{ fragment }}</template>
+                  </template>
+                </span>
+                <template v-else>{{ text }}</template>
               </template>
-            </span>
-            <template v-else>{{ text }}</template>
-          </template>
-        </a-table>
+            </a-table>
+          </div>
+        </a-col>
       </div>
-    </div>
+    </a-row>
   </div>
 </template>
 
@@ -327,8 +339,8 @@ export default {
       },
       chartlogSettings: {
         min: ["dataMin"],
-        yAxisType: ['percent'],
-        yAxisName: ['比率']
+        yAxisType: ["percent"],
+        yAxisName: ["比率"]
       },
       chartlogData: {
         columns: ["日期", "出勤情况"],
@@ -358,7 +370,10 @@ export default {
 };
 </script>
 <style scoped>
-.box1{
+.all {
+  background-color: rgb(225, 240, 255);
+}
+.box1 {
   opacity: 0.9;
   margin-bottom: 2px;
 }

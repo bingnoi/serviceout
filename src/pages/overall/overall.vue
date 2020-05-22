@@ -18,12 +18,5 @@ export default {
 </script>
 
 <style scoped>
-.attendence {
-  padding-left: 5%;
-  padding-top: 5%;
-}
-.safety {
-  padding-left: 5%;
-  padding-top: 5%;
-}
+
 </style>
