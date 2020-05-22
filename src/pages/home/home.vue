@@ -36,14 +36,14 @@
       </a-menu>
     </a-layout-sider>
     <a-layout :style="{ marginLeft: '200px' }">
-      <a-layout-header :style="{ background: '#fff', padding: 0 }" />
+      <!-- <a-layout-header :style="{ background: '#fff', padding: 0 }" /> -->
       <a-layout-content :style="{overflow: 'initial', padding: 0, margin: 0}">
         <div :style="{background: 'rgb(225, 240, 255)', textAlign: 'center' , padding: '24px'}">
           <router-view></router-view>
         </div>
       </a-layout-content>
       <a-layout-footer :style="{ textAlign: 'center' }">
-        sentinel系统为您服务
+        Sentinel系统为您服务
       </a-layout-footer>
     </a-layout>
   </a-layout>
