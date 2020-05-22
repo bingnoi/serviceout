@@ -1,121 +1,113 @@
 <template>
-<div class="list-container">
-  <a-table :data-source="data" :columns="columns">
-    <div
-      slot="filterDropdown"
-      slot-scope="{ setSelectedKeys, selectedKeys, confirm, clearFilters, column }"
-      style="padding: 8px"
-    >
-      <a-input
-        v-ant-ref="c => (searchInput = c)"
-        :placeholder="`Search ${column.dataIndex}`"
-        :value="selectedKeys[0]"
-        style="width: 188px; margin-bottom: 8px; display: block;"
-        @change="e => setSelectedKeys(e.target.value ? [e.target.value] : [])"
-        @pressEnter="() => handleSearch(selectedKeys, confirm, column.dataIndex)"
-      />
-      <a-button
-        type="primary"
-        icon="search"
-        size="small"
-        style="width: 90px; margin-right: 8px"
-        @click="() => handleSearch(selectedKeys, confirm, column.dataIndex)"
+  <div class="list-container">
+    <a-table :data-source="data" :columns="columns">
+      <div
+        slot="filterDropdown"
+        slot-scope="{ setSelectedKeys, selectedKeys, confirm, clearFilters, column }"
+        style="padding: 8px"
       >
-        Search
-      </a-button>
-      <a-button size="small" style="width: 90px" @click="() => handleReset(clearFilters)">
-        Reset
-      </a-button>
-    </div>
-    <a-icon
-      slot="filterIcon"
-      slot-scope="filtered"
-      type="search"
-      :style="{ color: filtered ? '#108ee9' : undefined }"
-    />
-    <template slot="customRender" slot-scope="text, record, index, column">
-      <span v-if="searchText && searchedColumn === column.dataIndex">
-        <template
-          v-for="(fragment, i) in text
+        <a-input
+          v-ant-ref="c => (searchInput = c)"
+          :placeholder="`Search ${column.dataIndex}`"
+          :value="selectedKeys[0]"
+          style="width: 188px; margin-bottom: 8px; display: block;"
+          @change="e => setSelectedKeys(e.target.value ? [e.target.value] : [])"
+          @pressEnter="() => handleSearch(selectedKeys, confirm, column.dataIndex)"
+        />
+        <a-button
+          type="primary"
+          icon="search"
+          size="small"
+          style="width: 90px; margin-right: 8px"
+          @click="() => handleSearch(selectedKeys, confirm, column.dataIndex)"
+        >Search</a-button>
+        <a-button size="small" style="width: 90px" @click="() => handleReset(clearFilters)">Reset</a-button>
+      </div>
+      <a-icon
+        slot="filterIcon"
+        slot-scope="filtered"
+        type="search"
+        :style="{ color: filtered ? '#108ee9' : undefined }"
+      />
+      <template slot="customRender" slot-scope="text, record, index, column">
+        <span v-if="searchText && searchedColumn === column.dataIndex">
+          <template
+            v-for="(fragment, i) in text
             .toString()
             .split(new RegExp(`(?<=${searchText})|(?=${searchText})`, 'i'))"
-        >
-          <mark
-            v-if="fragment.toLowerCase() === searchText.toLowerCase()"
-            :key="i"
-            class="highlight"
-            >{{ fragment }}</mark
           >
-          <template v-else>{{ fragment }}</template>
-        </template>
-      </span>
-      <template v-else>
-        {{ text }}
+            <mark
+              v-if="fragment.toLowerCase() === searchText.toLowerCase()"
+              :key="i"
+              class="highlight"
+            >{{ fragment }}</mark>
+            <template v-else>{{ fragment }}</template>
+          </template>
+        </span>
+        <template v-else>{{ text }}</template>
       </template>
-    </template>
-  </a-table>
-
-</div>
+    </a-table>
+  </div>
 </template>
 
 <script>
 const data = [
   {
-    key: '1',
-    name: 'John Brown',
+    key: "1",
+    name: "John Brown",
     age: 32,
-    wsID: '1000',
+    wsID: "1000",
     vioTime: 2,
-    entryTime: '2018 1 1'
+    entryTime: "2018 1 1"
   },
   {
-    key: '2',
-    name: 'Joe Black',
+    key: "2",
+    name: "Joe Black",
     age: 42,
-    wsID: '1000',
+    wsID: "1000",
     vioTime: 2,
     workDay: 31,
     showDay: 30,
-    entryTime: '2018 1 1'
+    entryTime: "2018 1 1"
   },
   {
-    key: '3',
-    name: 'Jim Green',
+    key: "3",
+    name: "Jim Green",
     age: 32,
-    wsID: '1001',
+    wsID: "1001",
     vioTime: 2,
     workDay: 31,
     showDay: 30,
-    entryTime: '2018 1 1'
+    entryTime: "2018 1 1"
   },
   {
-    key: '4',
-    name: 'Jim Red',
+    key: "4",
+    name: "Jim Red",
     age: 32,
-    wsID: '1003',
+    wsID: "1003",
     vioTime: 2,
     workDay: 31,
     showDay: 30,
-    entryTime: '2018 1 1'
+    entryTime: "2018 1 1"
   }
-]
+];
 export default {
-  name: 'worker_info',
-  data () {
+  name: "worker_info",
+  data() {
     return {
       data,
-      searchText: '',
+      searchText: "",
       searchInput: null,
-      searchedColumn: '',
+      searchedColumn: "",
       columns: [
         {
-          title: '姓名',
-          dataIndex: 'name',
-          key: 'name',
+          title: "姓名",
+          dataIndex: "name",
+          key: "name",
           scopedSlots: {
-            filterDropdown: 'filterDropdown',
-            filterIcon: 'filterIcon',
-            customRender: 'customRender'
+            filterDropdown: "filterDropdown",
+            filterIcon: "filterIcon",
+            customRender: "customRender"
           },
           onFilter: (value, record) =>
             record.name
@@ -125,19 +117,19 @@ export default {
           onFilterDropdownVisibleChange: visible => {
             if (visible) {
               setTimeout(() => {
-                this.searchInput.focus()
-              }, 0)
+                this.searchInput.focus();
+              }, 0);
             }
           }
         },
         {
-          title: 'Age',
-          dataIndex: 'age',
-          key: 'age',
+          title: "Age",
+          dataIndex: "age",
+          key: "age",
           scopedSlots: {
-            filterDropdown: 'filterDropdown',
-            filterIcon: 'filterIcon',
-            customRender: 'customRender'
+            filterDropdown: "filterDropdown",
+            filterIcon: "filterIcon",
+            customRender: "customRender"
           },
           onFilter: (value, record) =>
             record.age
@@ -147,19 +139,19 @@ export default {
           onFilterDropdownVisibleChange: visible => {
             if (visible) {
               setTimeout(() => {
-                this.searchInput.focus()
-              })
+                this.searchInput.focus();
+              });
             }
           }
         },
         {
-          title: '车间ID',
-          dataIndex: 'wsID',
-          key: 'wsID',
+          title: "车间ID",
+          dataIndex: "wsID",
+          key: "wsID",
           scopedSlots: {
-            filterDropdown: 'filterDropdown',
-            filterIcon: 'filterIcon',
-            customRender: 'customRender'
+            filterDropdown: "filterDropdown",
+            filterIcon: "filterIcon",
+            customRender: "customRender"
           },
           onFilter: (value, record) =>
             record.wsID
@@ -169,19 +161,19 @@ export default {
           onFilterDropdownVisibleChange: visible => {
             if (visible) {
               setTimeout(() => {
-                this.searchInput.focus()
-              })
+                this.searchInput.focus();
+              });
             }
           }
         },
         {
-          title: '违规次数',
-          dataIndex: 'vioTime',
-          key: 'vioTime',
+          title: "违规次数",
+          dataIndex: "vioTime",
+          key: "vioTime",
           scopedSlots: {
-            filterDropdown: 'filterDropdown',
-            filterIcon: 'filterIcon',
-            customRender: 'customRender'
+            filterDropdown: "filterDropdown",
+            filterIcon: "filterIcon",
+            customRender: "customRender"
           },
           onFilter: (value, record) =>
             record.vioTime
@@ -191,19 +183,19 @@ export default {
           onFilterDropdownVisibleChange: visible => {
             if (visible) {
               setTimeout(() => {
-                this.searchInput.focus()
-              })
+                this.searchInput.focus();
+              });
             }
           }
         },
         {
-          title: '入职时间',
-          dataIndex: 'entryTime',
-          key: 'entryTime',
+          title: "入职时间",
+          dataIndex: "entryTime",
+          key: "entryTime",
           scopedSlots: {
-            filterDropdown: 'filterDropdown',
-            filterIcon: 'filterIcon',
-            customRender: 'customRender'
+            filterDropdown: "filterDropdown",
+            filterIcon: "filterIcon",
+            customRender: "customRender"
           },
           onFilter: (value, record) =>
             record.vioTime
@@ -213,8 +205,8 @@ export default {
           onFilterDropdownVisibleChange: visible => {
             if (visible) {
               setTimeout(() => {
-                this.searchInput.focus()
-              })
+                this.searchInput.focus();
+              });
             }
           }
         }
@@ -241,30 +233,30 @@ export default {
         //   }
         // }
       ]
-    }
+    };
   },
 
   methods: {
-    handleSearch (selectedKeys, confirm, dataIndex) {
-      confirm()
-      this.searchText = selectedKeys[0]
-      this.searchedColumn = dataIndex
+    handleSearch(selectedKeys, confirm, dataIndex) {
+      confirm();
+      this.searchText = selectedKeys[0];
+      this.searchedColumn = dataIndex;
     },
 
-    handleReset (clearFilters) {
-      clearFilters()
-      this.searchText = ''
+    handleReset(clearFilters) {
+      clearFilters();
+      this.searchText = "";
     }
   }
-}
+};
 </script>
 
 <style scoped>
-.list-container{
+.list-container {
   width: 80%;
   background-color: white;
   padding: 10px;
   border-radius: 5px;
-  margin: 0 auto
+  margin: 0 auto;
 }
 </style>

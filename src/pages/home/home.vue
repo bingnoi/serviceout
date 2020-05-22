@@ -43,7 +43,7 @@
         </div>
       </a-layout-content>
       <a-layout-footer :style="{ textAlign: 'center' }">
-        sentinel系统为您服务
+        Sentinel系统为您服务
       </a-layout-footer>
     </a-layout>
   </a-layout>

@@ -1,25 +1,29 @@
 <template>
   <div>
-    <vio-manage></vio-manage>
-    <chart></chart>
+    <attendence></attendence>
   </div>
 </template>
 
 <script>
-import vioManage from './components/vio-manage'
-import chart from './components/chart'
+import attendence from "./components/attendence";
 export default {
-  name: 'overall-log',
-  data () {
-    return {
-    }
+  name: "overall-log",
+  data() {
+    return {};
   },
   components: {
-    vioManage,
-    chart
+    attendence
   }
-}
+};
 </script>
 
 <style scoped>
+.attendence {
+  padding-left: 5%;
+  padding-top: 5%;
+}
+.safety {
+  padding-left: 5%;
+  padding-top: 5%;
+}
 </style>

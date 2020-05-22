@@ -28,7 +28,6 @@
 </template>
 
 <script>
-import 'v-charts/lib/style.css'
 export default {
   name: 'upper',
   props: {
