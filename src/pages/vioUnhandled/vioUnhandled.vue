@@ -2,11 +2,10 @@
   <div>
     <div class="list-container">
       <a-card v-for="item in vioList" :key="item.id" :title="'测试事件' + item.id" style="width: 80%;margin: 10px auto">
-        <router-link :to="'vioDetail/'+item.id+'/'+item.wsID" tag="a" slot="extra">more</router-link>
+        <router-link :to="'vioHandling/'+item.id+'/'+item.time" tag="a" slot="extra">处理</router-link>
         <div>
           <span style="margin-right: 50px"><b>所属车间id:</b>   {{item.wsID}}</span>
           <span style="margin-right: 50px"><b>事件发生时间:</b>  {{item.time}}</span>
-          <span style="margin-right: 50px"><b>当前处理状态:</b>  {{item.state}}</span>
         </div>
       </a-card>
 
@@ -16,24 +15,19 @@
 
 <script>
 export default {
-  name: 'vioManage',
+  name: 'vioUnhandled',
   data () {
     return {
       vioList: [
         {
-          id: '001',
+          id: '004',
           time: '2020.5.14 12:00',
           wsID: '1000',
           state: 'processing'
         }, {
-          id: '002',
+          id: '005',
           time: '2020.5.14 12:00',
           wsID: '1001',
-          state: 'processing'
-        }, {
-          id: '003',
-          time: '2020.5.14 12:00',
-          wsID: '1002',
           state: 'processing'
         }
       ]

@@ -11,6 +11,8 @@ import wsInfo from '@/pages/ws_info/ws_info'
 import vioManage from '@/pages/viomanage/viomanage'
 import vioDetail from '@/pages/vioDetail/vioDetail'
 import startLog from '@/pages/startLog/startLog'
+import vioUnhandled from '@/pages/vioUnhandled/vioUnhandled'
+import vioHandling from '@/pages/vioHandling/vioHandling'
 
 Vue.use(Router)
 
@@ -56,6 +58,16 @@ export default new Router({
           path: 'vioManage',
           name: 'vioManage',
           component: vioManage
+        },
+        {
+          path: 'vioUnhandled',
+          name: 'vioUnhandled',
+          component: vioUnhandled
+        },
+        {
+          path: 'vioHandling/:eventID/:time',
+          name: 'vioHandling',
+          component: vioHandling
         },
         {
           path: 'vioDetail/:eventID/:wsID',

@@ -12,7 +12,8 @@
 
         <a-sub-menu key="menu-2">
           <span slot="title"><a-icon type="user"/><span>违规管理</span></span>
-          <a-menu-item key="menu-2_sub-1"><router-link to="/viomanage" style="color: white">违规记录操作</router-link></a-menu-item>
+          <a-menu-item key="menu-2_sub-1"><router-link to="/viomanage" style="color: white">违规日志</router-link></a-menu-item>
+          <a-menu-item key="menu-2_sub-2"><router-link to="/vioUnhandled" style="color: white">未处理违规</router-link></a-menu-item>
         </a-sub-menu>
 
         <a-sub-menu key="menu-3">
