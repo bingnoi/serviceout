@@ -15,9 +15,12 @@
         <div class="down-info">24</div>
       </div>
     </div>
+
     <video-player class="vjs-custom-skin video-box" :options="playerOptions1"></video-player>
     <video-player class="vjs-custom-skin video-box" :options="playerOptions2"></video-player>
     <video-player class="vjs-custom-skin video-box" :options="playerOptions3"></video-player>
+
+    <router-view style="margin: 5%;"></router-view>
 
   </div>
 </template>
@@ -145,4 +148,5 @@ export default {
   display: inline-block;
   margin: 10px;
 }
+
 </style>

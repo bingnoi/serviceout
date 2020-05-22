@@ -1,7 +1,8 @@
 <template>
-  <div style="width: 100%; background-color: white; padding : 30px">
+  <div style="width: 90%; background-color: white; padding : 30px">
     <div class="form-container">
-      <a-form-model :model="form" :label-col="labelCol" :wrapper-col="wrapperCol">
+      <h2 style="margin: 40px;">生成开工日志</h2>
+      <a-form-model :model="form" :label-col="labelCol" :wrapper-col="wrapperCol" @submit="handleSubmit">
         <a-form-model-item label="当前车间">
           <div>
             车间1
@@ -25,7 +26,7 @@
           <a-input v-model="form.desc" type="textarea" />
         </a-form-model-item>
         <a-form-model-item :wrapper-col="{ span: 14, offset: 4 }">
-          <a-button type="primary" @click="onSubmit">
+          <a-button type="primary"  html-type="submit">
             Create
           </a-button>
           <a-button style="margin-left: 10px;" @click="onCancel">
@@ -53,13 +54,10 @@ export default {
     }
   },
   methods: {
-    // getTime () {
-    //   let year = new Date().getFullYear()
-    //   let month = new Date().getMonth() + 1
-    //   let day = new Date().getDate()
-    //   this.date = '' + year + '.' + month + '.' + day
-    //   console.log(this.date)
-    // },
+    handleSubmit () {
+      alert('保存成功!')
+      this.$router.push('/site/wslist')
+    },
     onSubmit () {
       console.log('submit!', this.form)
       alert('提交成功!')

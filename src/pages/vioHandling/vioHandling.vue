@@ -9,6 +9,9 @@
         <a-descriptions-item label="发生时间">
           {{this.$route.params.time}}
         </a-descriptions-item>
+          <a-descriptions-item label="车间ID">
+            1000
+          </a-descriptions-item>
         <a-descriptions-item label="处理人员">
           王五
         </a-descriptions-item>
@@ -30,20 +33,19 @@
             v-decorator="['wow', { rules: [{ required: true, message: '请输入对应违规人员id!' }] }]"
           />
         </a-form-item>
-        <a-form-item label="Gender">
+        <a-form-item label="处理状态">
           <a-select
             v-decorator="[
-              'gender',
-              { rules: [{ required: true, message: 'Please select your gender!' }] },
+              'done',
+              { rules: [{ required: true, message: '请填入处理状态' }] },
             ]"
-            placeholder="Select a option and change input text above"
-            @change="handleSelectChange"
+            placeholder="事件当前处理状态"
           >
-            <a-select-option value="male">
-              male
+            <a-select-option value="processing">
+              正在处理
             </a-select-option>
             <a-select-option value="female">
-              female
+              以处理
             </a-select-option>
           </a-select>
         </a-form-item>

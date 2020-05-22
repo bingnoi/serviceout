@@ -42,7 +42,14 @@ export default new Router({
         {
           path: 'site',
           name: 'site',
-          component: site
+          component: site,
+          children: [
+            {
+              path: 'startLog',
+              name: 'startLog',
+              component: startLog
+            }
+          ]
         },
         {
           path: 'workerInfo',
