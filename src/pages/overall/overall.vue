@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="all">
     <attendence></attendence>
   </div>
 </template>
@@ -18,5 +18,7 @@ export default {
 </script>
 
 <style scoped>
-
+.all{
+  background-image: url("/api/sece.png");
+}
 </style>

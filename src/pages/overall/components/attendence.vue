@@ -274,15 +274,14 @@ export default {
         ]
       },
       chartSettings: {
-        chartTitle: { text: "实时安全状态", left: "middle", bottom: 20 },
         dataName: {
-          实时安全状态: "Safety-indicator"
+          实时安全状态: ""
         },
         seriesMap: {
           实时安全状态: {
             min: 0,
-            max: 4,
-            splitNumber: 4
+            max: 3,
+            splitNumber: 3
           },
           axisLine: {
             //划分格子的样式
@@ -298,15 +297,14 @@ export default {
             }
           },
           axisLabel: {
-            //标签样式
             textStyle: {
+              // 属性lineStyle控制线条样式
               fontWeight: "bolder",
               color: "#fff",
-              shadowColor: "#fff",
+              shadowColor: "#fff", //默认透明
               shadowBlur: 10
             },
             formatter: function(v) {
-              console.log(v);
               switch (v + "") {
                 case "0":
                   return "优";
@@ -317,19 +315,22 @@ export default {
                 case "3":
                   return "差";
               }
-            },
-            splitLine: {
-              length: 15,
-              lineStyle: {
-                width: 3,
-                color: "#fff",
-                shadowColor: "#fff",
-                shadowBlur: 10
-              }
-            },
-            detail: {
-              show: false
             }
+          },
+          splitLine: {
+            length: 15,
+            lineStyle: {
+              width: 3,
+              color: "#fff",
+              shadowColor: "#fff",
+              shadowBlur: 10
+            }
+          },
+          title: {
+            show: false
+          },
+          detail: {
+            show: false
           }
         }
       },
@@ -370,22 +371,24 @@ export default {
 };
 </script>
 <style scoped>
-.all {
-  background-color: rgb(225, 240, 255);
-}
 .box1 {
-  opacity: 0.9;
+  background-color: rgb(225, 240, 255);
+  opacity: 0.8;
   margin-bottom: 2px;
 }
 .left {
   width: 30%;
 }
 .log {
+  opacity: 0.8;
+  background-color: rgb(225, 240, 255);
   width: 30%;
 }
 .list-container {
-  width: 65%;
-  padding-left: 5%;
+  opacity: 0.8;
+  background-color: rgb(225, 240, 255);
+  width: 66%;
+  margin-left: 2%;
 }
 .list-container,
 .log {
