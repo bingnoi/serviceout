@@ -24,6 +24,7 @@
         </a-page-header>
       </div>
     </a-row>
+    <a-divider />
     <a-row type="flex" justify="center">
       <a-col :span="20">
         <a-descriptions title="" layout="vertical" bordered>

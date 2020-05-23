@@ -13,6 +13,7 @@ import vioDetail from '@/pages/vioDetail/vioDetail'
 import startLog from '@/pages/startLog/startLog'
 import vioUnhandled from '@/pages/vioUnhandled/vioUnhandled'
 import vioHandling from '@/pages/vioHandling/vioHandling'
+import find from '@/pages/find/find'
 
 Vue.use(Router)
 
@@ -60,6 +61,11 @@ export default new Router({
           path: 'wsInfo',
           name: 'wsInfo',
           component: wsInfo
+        },
+        {
+          path: 'find',
+          name: 'find',
+          component: find
         },
         {
           path: 'vioManage',

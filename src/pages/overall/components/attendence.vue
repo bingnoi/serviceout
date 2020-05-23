@@ -1,6 +1,6 @@
 <template>
   <div>
-    <a-row>
+    <a-row type="flex">
       <div class="left">
         <a-row>
           <div class="box1">
@@ -24,6 +24,32 @@
             ></ve-gauge>
           </div>
         </a-row>
+      </div>
+      <div>
+        <a-col>
+          <div class="prop1">
+            <a-popover title="车间1">
+              <template slot="content">
+                <p>工作状态：正常</p>
+                <p>负责人：李菲菲 1874525363627</p>
+              </template>
+              <a-button type="primary">车间1</a-button>
+            </a-popover>
+          </div>
+        </a-col>
+      </div>
+      <div>
+        <a-col>
+          <div class="prop2">
+            <a-popover title="车间2">
+              <template slot="content">
+                <p>工作状态：正常</p>
+                <p>负责人：高任 1874525363627</p>
+              </template>
+              <a-button type="primary">车间2</a-button>
+            </a-popover>
+          </div>
+        </a-col>
       </div>
     </a-row>
 
@@ -371,6 +397,14 @@ export default {
 };
 </script>
 <style scoped>
+.prop1 {
+  padding-left: 200px;
+  padding-top: 200px;
+}
+.prop2 {
+  padding-left: 200px;
+  padding-top: 450px;
+}
 .box1 {
   background-color: rgb(225, 240, 255);
   opacity: 0.8;

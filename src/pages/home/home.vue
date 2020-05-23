@@ -24,7 +24,7 @@
 
         <a-sub-menu key="menu-4">
           <span slot="title"><a-icon type="user"/><span>考勤数据库管理</span></span>
-          <a-menu-item key="menu-4_sub-1"><router-link to="/overall" style="color: white">出勤查询</router-link></a-menu-item>
+          <a-menu-item key="menu-4_sub-1"><router-link to="/find" style="color: white">出勤查询</router-link></a-menu-item>
         </a-sub-menu>
 
         <a-sub-menu key="menu1">
