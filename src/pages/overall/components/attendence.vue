@@ -37,6 +37,26 @@
               <a-button type="primary">车间1</a-button>
             </a-popover>
           </div>
+          <div class="prop3">
+            <a-popover title="车间3">
+              <template slot="content">
+                <p>工作状态：正常</p>
+                <p>安全状态：中</p>
+                <p>负责人：杨于 1874525363627</p>
+              </template>
+              <a-button type="primary">车间3</a-button>
+            </a-popover>
+          </div>
+          <div class="prop4">
+            <a-popover title="车间4">
+              <template slot="content">
+                <p>工作状态：正常</p>
+                <p>安全状态：中</p>
+                <p>负责人：李赞 1874525363627</p>
+              </template>
+              <a-button type="primary">车间4</a-button>
+            </a-popover>
+          </div>
         </a-col>
       </div>
       <div>
@@ -49,6 +69,26 @@
                 <p>负责人：高任 1874525363627</p>
               </template>
               <a-button type="primary">车间2</a-button>
+            </a-popover>
+          </div>
+          <div class="prop5">
+            <a-popover title="车间5">
+              <template slot="content">
+                <p>工作状态：正常</p>
+                <p>安全状态：中</p>
+                <p>负责人：王欧 1874525363627</p>
+              </template>
+              <a-button type="primary">车间5</a-button>
+            </a-popover>
+          </div>
+          <div class="prop6">
+            <a-popover title="车间6">
+              <template slot="content">
+                <p>工作状态：正常</p>
+                <p>安全状态：中</p>
+                <p>负责人：丁计 1874525363627</p>
+              </template>
+              <a-button type="primary">车间6</a-button>
             </a-popover>
           </div>
         </a-col>
@@ -400,12 +440,28 @@ export default {
 </script>
 <style scoped>
 .prop1 {
-  padding-left: 200px;
-  padding-top: 200px;
+  padding-left: 100px;
+  padding-top: 100px;
 }
 .prop2 {
   padding-left: 200px;
-  padding-top: 450px;
+  padding-top: 140px;
+}
+.prop3 {
+  padding-left: 2px;
+  padding-top: 70px;
+}
+.prop4 {
+  padding-left: 200px;
+  padding-top: 50px;
+}
+.prop5 {
+  padding-left: 200px;
+  padding-top: 70px;
+}
+.prop6 {
+  padding-left: 200px;
+  padding-top: 180px;
 }
 .box1 {
   background-color: rgb(225, 240, 255);
