@@ -34,6 +34,21 @@ export default {
           id: '003',
           time: '2020.5.14 12:00',
           wsID: '1002',
+          state: 'unhandled'
+        }, {
+          id: '004',
+          time: '2020.5.14 12:00',
+          wsID: '1002',
+          state: 'processing'
+        }, {
+          id: '005',
+          time: '2020.5.14 12:00',
+          wsID: '1002',
+          state: 'unhandled'
+        }, {
+          id: '006',
+          time: '2020.5.14 12:00',
+          wsID: '1002',
           state: 'processing'
         }
       ]

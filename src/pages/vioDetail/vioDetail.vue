@@ -5,7 +5,7 @@
         <a-descriptions
           title="事件详情"
           bordered
-          :column="{ xxl: 4, xl: 3, lg: 3, md: 3, sm: 2, xs: 1 }"
+          :column="2"
         >
           <a-descriptions-item label="违规事件ID">
             {{$route.params.eventID}}

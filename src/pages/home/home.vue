@@ -6,6 +6,7 @@
           <img src="/api/logo.png" alt="logo" style="width: 100%">
         </router-link>
       </div>
+      <div class="logo-title">Sentinel</div>
       <a-menu theme="dark" mode="inline" :defaultSelectedKeys="['4']">
         <a-menu-item key="menu-0">
           <a-icon type="appstore-o" />
@@ -18,8 +19,8 @@
 
         <a-sub-menu key="menu-2">
           <span slot="title"><a-icon type="user"/><span>违规管理</span></span>
-          <a-menu-item key="menu-2_sub-1"><router-link to="/viomanage" style="color: white">违规日志</router-link></a-menu-item>
           <a-menu-item key="menu-2_sub-2"><router-link to="/vioUnhandled" style="color: white">未处理违规</router-link></a-menu-item>
+          <a-menu-item key="menu-2_sub-1"><router-link to="/viomanage" style="color: white">违规日志</router-link></a-menu-item>
         </a-sub-menu>
 
         <a-sub-menu key="menu-3">
@@ -72,5 +73,13 @@ export default {
   margin: 20px;
   background-color: rgb(88, 116, 128);
   border-radius: 10px;
+}
+.logo-title{
+  width: 100%;
+  text-align: center;;
+  color: white;
+  font-size: 22px;
+  position: relative;
+  top: -10px
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-<div style="width: 100%; display: flex;">
+<div style="width: 100%; display: flex; flex-wrap: wrap; flex-direction: row">
   <ws-card v-for="item in listData"
            :key="item.key"
            :id="item.WSid"
@@ -7,38 +7,9 @@
            :num_all="item.number_all"
            :num_cul="item.number_current"
            ></ws-card>
-
-  <!-- <div style="width: 100%;">
-
-    <a-list item-layout="vertical"
-            size="large"
-            :pagination="pagination"
-            :data-source="listData"
-            :bordered="true"
-            style="background-color: white">
-
-      <div slot="footer"><h3>车间列表</h3></div>
-      <a-list-item slot="renderItem" key="item.key" slot-scope="item">
-          <img
-            slot="extra"
-            width="272"
-            alt="logo"
-            :src="item.src"
-          />
-        <a-list-item-meta :description="'车间id: '+item.WSid">
-          <a  slot="title">
-            {{ item.name }}
-          </a>
-        </a-list-item-meta>
-        到岗情况:  {{ item.number_current }} / {{ item.number_all }} <br/><br/>
-        当前状态: <a-icon
-                  :type="item.state?'check':'close'"
-                  :style="item.state?'color: green':'color: red'"></a-icon>
-                  <br/><br/>
-      <router-link to="/site/startLog">车间现场</router-link><br/><br/>
-      </a-list-item>
-    </a-list>
-  </div> -->
+  <div class="pegi-container">
+    <a-pagination v-model="current" :total="50" show-less-items />
+  </div>
 </div>
 </template>
 
@@ -53,6 +24,7 @@ export default {
   },
   data () {
     return {
+      current: 1,
       isGood: 'close',
       listData: [],
       pagination: {
@@ -91,5 +63,10 @@ export default {
   border-radius: 5px;
   right: 50px;
   border: 1px solid rgb(180, 180, 180)
+}
+.pegi-container{
+  height: 50px;
+  position: relative;
+  left:870px
 }
 </style>
