@@ -48,7 +48,6 @@ export default {
   margin: 3%;
   position: relative;
   border-radius: 5px;
-  border: 1px solid rgb(168, 168, 168);
 }
 .avatar{
   position: absolute;
@@ -56,7 +55,8 @@ export default {
   top: 20px;
 }
 .title{
-  font-size: 30px;
+  font-size: 25px;
+  font-weight: 500;
   margin: 10px;
 }
 .bottom{

@@ -1,8 +1,8 @@
 <template>
   <a-layout id="components-layout-demo-fixed-sider">
     <a-layout-sider :style="{ overflow: 'auto', height: '100vh', position: 'fixed', left: 0}">
-      <div class="logo" style="color: white;text-align: center">
-        This is LOGO
+      <div class="my-logo">
+        <img src="/api/logo.png" alt="logo" style="width: 100%">
       </div>
       <a-menu theme="dark" mode="inline" :defaultSelectedKeys="['4']">
         <a-menu-item key="menu-1">
@@ -67,5 +67,10 @@ export default {
   height: 32px;
   background: rgba(255, 255, 255, 0.2);
   margin: 16px;
+}
+.my-logo{
+  margin: 20px;
+  background-color: rgb(88, 116, 128);
+  border-radius: 10px;
 }
 </style>
