@@ -2,9 +2,15 @@
   <a-layout id="components-layout-demo-fixed-sider">
     <a-layout-sider :style="{ overflow: 'auto', height: '100vh', position: 'fixed', left: 0}">
       <div class="my-logo">
-        <img src="/api/logo.png" alt="logo" style="width: 100%">
+        <router-link to="/">
+          <img src="/api/logo.png" alt="logo" style="width: 100%">
+        </router-link>
       </div>
       <a-menu theme="dark" mode="inline" :defaultSelectedKeys="['4']">
+        <a-menu-item key="menu-0">
+          <a-icon type="appstore-o" />
+          <span class="nav-text"><router-link to="/overall" style="color: white">主页</router-link></span>
+        </a-menu-item>
         <a-menu-item key="menu-1">
           <a-icon type="appstore-o" />
           <span class="nav-text"><router-link to="/wslist" style="color: white">车间列表</router-link></span>
@@ -25,12 +31,6 @@
         <a-sub-menu key="menu-4">
           <span slot="title"><a-icon type="user"/><span>考勤数据库管理</span></span>
           <a-menu-item key="menu-4_sub-1"><router-link to="/find" style="color: white">出勤查询</router-link></a-menu-item>
-        </a-sub-menu>
-
-        <a-sub-menu key="menu1">
-          <span slot="title"><a-icon type="user"/><span>园区总览</span></span>
-          <a-menu-item key="sub1"><router-link to="/overall" style="color: white">总览页</router-link></a-menu-item>
-          <a-menu-item key="sub2"><router-link to="/overall_log" style="color: white">工作日志总览</router-link></a-menu-item>
         </a-sub-menu>
 
       </a-menu>

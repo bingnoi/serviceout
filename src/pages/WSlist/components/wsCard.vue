@@ -11,14 +11,13 @@
       </div>
     </div>
     <div class="bottom">
-      <a-button-group style="line-height: 50px">
-        <router-link to="/site/startLog">
-          <a-button type="primary" ghost style="color: black">监控现场</a-button>
-        </router-link>
-        <router-link to="wsInfo">
-          <a-button type="primary" ghost style="color: black">车间信息</a-button>
-        </router-link>
-      </a-button-group>
+      <router-link class="bottom-item" to="/site/startLog">
+        <div>车间现场</div>
+      </router-link>
+      <div class="divider"></div>
+      <router-link class="bottom-item" to="/wsinfo">
+        <div>详细信息</div>
+      </router-link>
     </div>
   </div>
 </template>
@@ -48,6 +47,7 @@ export default {
   margin: 3%;
   position: relative;
   border-radius: 5px;
+  box-shadow: 10px 5px 20px #888888;
 }
 .avatar{
   position: absolute;
@@ -64,7 +64,10 @@ export default {
   height: 50px;
   position: absolute;
   bottom: 0px;
-  border-top: 2px solid rgb(168, 168, 168)
+  border-top: 2px solid rgb(182, 218, 255);
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row
 }
 .info-container{
   position: absolute;
@@ -72,5 +75,21 @@ export default {
 }
 .info{
   text-align: left
+}
+.divider{
+  width: 1px;
+  height: 48px;
+  border: 1.5px solid rgb(182, 218, 255)
+}
+.bottom-item{
+  width: 50%;
+  line-height: 50px;
+  font-size: 17px;
+  color: black;
+  transition:all 0.3s;
+}
+.bottom-item:hover{
+  background-color: rgb(118, 187, 255);
+  color: white
 }
 </style>
