@@ -31,6 +31,7 @@
             <a-popover title="车间1">
               <template slot="content">
                 <p>工作状态：正常</p>
+                <p>安全状态：中</p>
                 <p>负责人：李菲菲 1874525363627</p>
               </template>
               <a-button type="primary">车间1</a-button>
@@ -44,6 +45,7 @@
             <a-popover title="车间2">
               <template slot="content">
                 <p>工作状态：正常</p>
+                <p>安全状态：优</p>
                 <p>负责人：高任 1874525363627</p>
               </template>
               <a-button type="primary">车间2</a-button>
