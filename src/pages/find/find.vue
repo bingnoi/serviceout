@@ -1,261 +1,158 @@
 <template>
-  <div class="list-container">
-    <a-table :data-source="data" :columns="columns">
-      <div
-        slot="filterDropdown"
-        slot-scope="{ setSelectedKeys, selectedKeys, confirm, clearFilters, column }"
-        style="padding: 8px"
-      >
-        <a-input
-          v-ant-ref="c => (searchInput = c)"
-          :placeholder="`Search ${column.dataIndex}`"
-          :value="selectedKeys[0]"
-          style="width: 188px; margin-bottom: 8px; display: block;"
-          @change="e => setSelectedKeys(e.target.value ? [e.target.value] : [])"
-          @pressEnter="() => handleSearch(selectedKeys, confirm, column.dataIndex)"
-        />
-        <a-button
-          type="primary"
-          icon="search"
-          size="small"
-          style="width: 90px; margin-right: 8px"
-          @click="() => handleSearch(selectedKeys, confirm, column.dataIndex)"
-        >Search</a-button>
-        <a-button size="small" style="width: 90px" @click="() => handleReset(clearFilters)">Reset</a-button>
+  <div>
+    <div class="list-container1">
+      <div class="list-title1">
+        工人列表
       </div>
-      <a-icon
-        slot="filterIcon"
-        slot-scope="filtered"
-        type="search"
-        :style="{ color: filtered ? '#108ee9' : undefined }"
-      />
-      <template slot="customRender" slot-scope="text, record, index, column">
-        <span v-if="searchText && searchedColumn === column.dataIndex">
-          <template
-            v-for="(fragment, i) in text
-            .toString()
-            .split(new RegExp(`(?<=${searchText})|(?=${searchText})`, 'i'))"
+      <a-list item-layout="horizontal" :data-source="data">
+        <a-list-item slot="renderItem" slot-scope="item">
+          <a-list-item-meta
           >
-            <mark
-              v-if="fragment.toLowerCase() === searchText.toLowerCase()"
-              :key="i"
-              class="highlight"
-            >{{ fragment }}</mark>
-            <template v-else>{{ fragment }}</template>
-          </template>
-        </span>
-        <template v-else>{{ text }}</template>
-      </template>
-    </a-table>
+            <a @click="changeName(item.name, item.ID, item.wsID)" slot="title">{{ item.name }}</a>
+            <a-avatar
+              slot="avatar"
+              src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+            />
+            <span slot="description" style="margin-right: 30px;">工人id: {{item.ID}}</span>
+            <span slot="description">所属车间: {{item.wsID}}</span>
+          </a-list-item-meta>
+        </a-list-item>
+      </a-list>
+    </div>
+    <div class="list-container2">
+      <div class="list-title1">
+        出勤记录列表
+      </div>
+      <a-spin :spinning="spin">
+        <info
+          :name="this.name"
+          :ID="this.ID"
+          :wsID="this.wsID"
+          ></info>
+      </a-spin>
+    </div>
   </div>
 </template>
 
 <script>
-const data = [
-  {
-    key: "1",
-    name: "John Brown",
-    age: 32,
-    wsID: "1000",
-    vioTime: 2,
-    entryTime: "2018 1 1"
-  },
-  {
-    key: "2",
-    name: "Joe Black",
-    age: 42,
-    wsID: "1000",
-    vioTime: 2,
-    workDay: 31,
-    showDay: 30,
-    entryTime: "2018 1 1"
-  },
-  {
-    key: "3",
-    name: "Jim Green",
-    age: 32,
-    wsID: "1001",
-    vioTime: 2,
-    workDay: 31,
-    showDay: 30,
-    entryTime: "2018 1 1"
-  },
-  {
-    key: "4",
-    name: "Jim Red",
-    age: 32,
-    wsID: "1003",
-    vioTime: 2,
-    workDay: 31,
-    showDay: 30,
-    entryTime: "2018 1 1"
-  }
-];
+import info from './components/info'
+
 export default {
-  data() {
+  name: 'find',
+  data () {
     return {
-      data,
-      searchText: "",
-      searchInput: null,
-      searchedColumn: "",
-      columns: [
+      spin: false,
+      name: '张三',
+      ID: '10001',
+      wsID: '1000',
+      data: [
         {
-          title: "姓名",
-          dataIndex: "name",
-          key: "name",
-          scopedSlots: {
-            filterDropdown: "filterDropdown",
-            filterIcon: "filterIcon",
-            customRender: "customRender"
-          },
-          onFilter: (value, record) =>
-            record.name
-              .toString()
-              .toLowerCase()
-              .includes(value.toLowerCase()),
-          onFilterDropdownVisibleChange: visible => {
-            if (visible) {
-              setTimeout(() => {
-                this.searchInput.focus();
-              }, 0);
-            }
-          }
+          name: '张三',
+          ID: '10001',
+          wsID: '1000'
         },
         {
-          title: "Age",
-          dataIndex: "age",
-          key: "age",
-          scopedSlots: {
-            filterDropdown: "filterDropdown",
-            filterIcon: "filterIcon",
-            customRender: "customRender"
-          },
-          onFilter: (value, record) =>
-            record.age
-              .toString()
-              .toLowerCase()
-              .includes(value.toLowerCase()),
-          onFilterDropdownVisibleChange: visible => {
-            if (visible) {
-              setTimeout(() => {
-                this.searchInput.focus();
-              });
-            }
-          }
+          name: '王五',
+          ID: '10002',
+          wsID: '1001'
         },
         {
-          title: "车间ID",
-          dataIndex: "wsID",
-          key: "wsID",
-          scopedSlots: {
-            filterDropdown: "filterDropdown",
-            filterIcon: "filterIcon",
-            customRender: "customRender"
-          },
-          onFilter: (value, record) =>
-            record.wsID
-              .toString()
-              .toLowerCase()
-              .includes(value.toLowerCase()),
-          onFilterDropdownVisibleChange: visible => {
-            if (visible) {
-              setTimeout(() => {
-                this.searchInput.focus();
-              });
-            }
-          }
+          name: '张三',
+          ID: '10001',
+          wsID: '1000'
         },
         {
-          title: "违规次数",
-          dataIndex: "vioTime",
-          key: "vioTime",
-          scopedSlots: {
-            filterDropdown: "filterDropdown",
-            filterIcon: "filterIcon",
-            customRender: "customRender"
-          },
-          onFilter: (value, record) =>
-            record.vioTime
-              .toString()
-              .toLowerCase()
-              .includes(value.toLowerCase()),
-          onFilterDropdownVisibleChange: visible => {
-            if (visible) {
-              setTimeout(() => {
-                this.searchInput.focus();
-              });
-            }
-          }
+          name: '张三',
+          ID: '10001',
+          wsID: '1000'
         },
         {
-          title: "入职时间",
-          dataIndex: "entryTime",
-          key: "entryTime",
-          scopedSlots: {
-            filterDropdown: "filterDropdown",
-            filterIcon: "filterIcon",
-            customRender: "customRender"
-          },
-          onFilter: (value, record) =>
-            record.vioTime
-              .toString()
-              .toLowerCase()
-              .includes(value.toLowerCase()),
-          onFilterDropdownVisibleChange: visible => {
-            if (visible) {
-              setTimeout(() => {
-                this.searchInput.focus();
-              });
-            }
-          }
+          name: '张三',
+          ID: '10001',
+          wsID: '1000'
+        },
+        {
+          name: '张三',
+          ID: '10001',
+          wsID: '1000'
+        },
+        {
+          name: '张三',
+          ID: '10001',
+          wsID: '1000'
+        },
+        {
+          name: '张三',
+          ID: '10001',
+          wsID: '1000'
+        },
+        {
+          name: '张三',
+          ID: '10001',
+          wsID: '1000'
+        },
+        {
+          name: '张三',
+          ID: '10001',
+          wsID: '1000'
+        },
+        {
+          name: '张三',
+          ID: '10001',
+          wsID: '1000'
+        },
+        {
+          name: '张三',
+          ID: '10001',
+          wsID: '1000'
+        },
+        {
+          name: '张三',
+          ID: '10001',
+          wsID: '1000'
         }
-        // {
-        //   title: '基础工资',
-        //   dataIndex: 'salary',
-        //   key: 'salary',
-        //   scopedSlots: {
-        //     filterDropdown: 'filterDropdown',
-        //     filterIcon: 'filterIcon',
-        //     customRender: 'customRender'
-        //   },
-        //   onFilter: (value, record) =>
-        //     record.vioTime
-        //       .toString()
-        //       .toLowerCase()
-        //       .includes(value.toLowerCase()),
-        //   onFilterDropdownVisibleChange: visible => {
-        //     if (visible) {
-        //       setTimeout(() => {
-        //         this.searchInput.focus()
-        //       })
-        //     }
-        //   }
-        // }
       ]
-    };
-  },
-
-  methods: {
-    handleSearch(selectedKeys, confirm, dataIndex) {
-      confirm();
-      this.searchText = selectedKeys[0];
-      this.searchedColumn = dataIndex;
-    },
-
-    handleReset(clearFilters) {
-      clearFilters();
-      this.searchText = "";
     }
+  },
+  methods: {
+    changeName (e, f, g) {
+      console.log(f)
+      this.spin = true
+      setTimeout(() => {
+        this.spin = false
+        this.name = e
+        this.ID = f
+        this.wsID = g
+      }, 1000)
+    }
+  },
+  components: {
+    info
   }
-};
+}
 </script>
 
 <style scoped>
-.list-container {
-  width: 80%;
+.list-container1{
+  width: 30%;
   background-color: white;
   padding: 10px;
   border-radius: 5px;
-  margin: 0 auto;
+  text-align: left
+}
+.list-container2{
+  text-align: left;
+  width: 55%;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  position: fixed;
+  right: 20px;
+  top: 30px;
+}
+.list-title1{
+  font-size: 30px;
+  margin: 10px;
+  margin-left: 30px;
 }
 </style>

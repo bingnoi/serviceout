@@ -6,7 +6,6 @@
           <img src="/api/logo.png" alt="logo" style="width: 100%">
         </router-link>
       </div>
-      <div class="logo-title">Sentinel</div>
       <a-menu theme="dark" mode="inline" :defaultSelectedKeys="['4']">
         <a-menu-item key="menu-0">
           <a-icon type="appstore-o" />
@@ -71,15 +70,7 @@ export default {
 }
 .my-logo{
   margin: 20px;
-  background-color: rgb(88, 116, 128);
+  background-color: rgb(62, 84, 94);
   border-radius: 10px;
-}
-.logo-title{
-  width: 100%;
-  text-align: center;;
-  color: white;
-  font-size: 22px;
-  position: relative;
-  top: -10px
 }
 </style>

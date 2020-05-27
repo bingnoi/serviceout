@@ -6,6 +6,7 @@
            :state="item.state"
            :num_all="item.number_all"
            :num_cul="item.number_current"
+           :manager="item.manager"
            ></ws-card>
   <div class="pegi-container">
     <a-pagination v-model="current" :total="50" show-less-items />
@@ -31,8 +32,7 @@ export default {
         onChange: page => {
           console.log(page)
         },
-        pageSize: 4,
-        pieData: {}
+        pageSize: 4
       }
     }
   },
@@ -45,7 +45,6 @@ export default {
       res = res.data
       if (res.ret && res.data) {
         this.listData = res.data.listData
-        this.pieData = res.data.pieData
       }
     }
   },
@@ -56,15 +55,8 @@ export default {
 </script>
 
 <style scoped>
-.pie-container{
-  background-color: white;
-  height: 400px;
-  position: fixed;
-  border-radius: 5px;
-  right: 50px;
-  border: 1px solid rgb(180, 180, 180)
-}
 .pegi-container{
+  margin: 20px;
   height: 50px;
   position: relative;
   left:870px

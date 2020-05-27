@@ -54,60 +54,100 @@
 const data = [
   {
     key: "1",
-    name: "John Brown",
+    name: "张三",
     age: 32,
     wsID: "1000",
     vioTime: 2,
-    entryTime: "2018 1 1"
+    entryTime: "2018.1.1"
   },
   {
     key: "2",
-    name: "Joe Black",
+    name: "李四",
     age: 42,
     wsID: "1000",
-    vioTime: 2,
+    vioTime: 3,
     workDay: 31,
     showDay: 30,
-    entryTime: "2018 1 1"
+    entryTime: "2019.3.21"
   },
   {
     key: "3",
-    name: "Jim Green",
+    name: "王五",
     age: 32,
     wsID: "1001",
-    vioTime: 2,
+    vioTime: 8,
     workDay: 31,
     showDay: 30,
-    entryTime: "2018 1 1"
+    entryTime: "2017.5.24"
   },
   {
     key: "4",
-    name: "Jim Red",
+    name: "陈六",
+    age: 32,
+    wsID: "1003",
+    vioTime: 0,
+    workDay: 31,
+    showDay: 30,
+    entryTime: "2018.12.15"
+  },
+  {
+    key: "5",
+    name: "周七",
     age: 32,
     wsID: "1003",
     vioTime: 2,
     workDay: 31,
     showDay: 30,
-    entryTime: "2018 1 1"
+    entryTime: "2015.5.5"
+  },
+  {
+    key: "6",
+    name: "徐八",
+    age: 32,
+    wsID: "1003",
+    vioTime: 2,
+    workDay: 31,
+    showDay: 30,
+    entryTime: "2016.8.12"
+  },
+  {
+    key: "7",
+    name: "丁九",
+    age: 32,
+    wsID: "1003",
+    vioTime: 4,
+    workDay: 31,
+    showDay: 30,
+    entryTime: "2020.2.3"
+  },
+  {
+    key: "8",
+    name: "程十",
+    age: 32,
+    wsID: "1003",
+    vioTime: 3,
+    workDay: 31,
+    showDay: 30,
+    entryTime: "2019.10.10"
   }
 ];
 export default {
-  name: "worker_info",
-  data() {
+  name: 'worker_info',
+  data () {
     return {
       data,
-      searchText: "",
+      searchText: '',
       searchInput: null,
-      searchedColumn: "",
+      searchedColumn: '',
       columns: [
         {
-          title: "姓名",
-          dataIndex: "name",
-          key: "name",
+          title: '姓名',
+          dataIndex: 'name',
+          key: 'name',
           scopedSlots: {
-            filterDropdown: "filterDropdown",
-            filterIcon: "filterIcon",
-            customRender: "customRender"
+            filterDropdown: 'filterDropdown',
+            filterIcon: 'filterIcon',
+            customRender: 'customRender'
           },
           onFilter: (value, record) =>
             record.name
@@ -117,19 +157,19 @@ export default {
           onFilterDropdownVisibleChange: visible => {
             if (visible) {
               setTimeout(() => {
-                this.searchInput.focus();
-              }, 0);
+                this.searchInput.focus()
+              }, 0)
             }
           }
         },
         {
-          title: "Age",
-          dataIndex: "age",
-          key: "age",
+          title: '年龄',
+          dataIndex: 'age',
+          key: 'age',
           scopedSlots: {
-            filterDropdown: "filterDropdown",
-            filterIcon: "filterIcon",
-            customRender: "customRender"
+            filterDropdown: 'filterDropdown',
+            filterIcon: 'filterIcon',
+            customRender: 'customRender'
           },
           onFilter: (value, record) =>
             record.age
@@ -139,19 +179,19 @@ export default {
           onFilterDropdownVisibleChange: visible => {
             if (visible) {
               setTimeout(() => {
-                this.searchInput.focus();
-              });
+                this.searchInput.focus()
+              })
             }
           }
         },
         {
-          title: "车间ID",
-          dataIndex: "wsID",
-          key: "wsID",
+          title: '车间ID',
+          dataIndex: 'wsID',
+          key: 'wsID',
           scopedSlots: {
-            filterDropdown: "filterDropdown",
-            filterIcon: "filterIcon",
-            customRender: "customRender"
+            filterDropdown: 'filterDropdown',
+            filterIcon: 'filterIcon',
+            customRender: 'customRender'
           },
           onFilter: (value, record) =>
             record.wsID

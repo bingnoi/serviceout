@@ -6,7 +6,7 @@
       <div>
         <div class="title">车间{{id}}</div>
         <div class="info-container">
-          <div class="info">车间主任: 李菲菲</div>
+          <div class="info">车间主任: {{manager}}</div>
           <div class="info">到岗情况: {{num_cul}} / {{num_all}}</div>
           <div class="info">车间状态: <a-icon
                     :type="state?'check':'close'"
@@ -33,7 +33,8 @@ export default {
     id: String,
     state: Boolean,
     num_all: String,
-    num_cul: String
+    num_cul: String,
+    manager: String
   },
   data () {
     return {
@@ -45,10 +46,10 @@ export default {
 
 <style scoped>
 .card-container{
-  width: 25%;
+  width: 29%;
   height: 180px;
   background-color: white;
-  margin: 4.1%;
+  margin: 2%;
   position: relative;
   border-radius: 5px;
 }

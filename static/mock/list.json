@@ -6,49 +6,55 @@
       {
         "key": "1",
         "name": "车间1",
+        "manager": "李菲菲",
         "WSid": "1000",
         "state": true,
-        "number_all": "300",
-        "number_current": "280",
+        "number_all": "302",
+        "number_current": "278",
         "src": "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2764444840,3876330404&fm=26&gp=0.jpg"
       },{
         "key": "2",
         "name": "车间2",
+        "manager": "高任",
         "WSid": "1001",
         "state": false,
-        "number_all": "300",
-        "number_current": "280",
+        "number_all": "179",
+        "number_current": "177",
         "src": "http://www.lanhesheji.com/uploadfile/2018/1101/20181101023019312.jpg"
       },{
         "key": "3",
         "name": "车间3",
+        "manager": "杨于",
         "WSid": "1002",
         "state": true,
-        "number_all": "300",
-        "number_current": "280",
+        "number_all": "256",
+        "number_current": "250",
         "src": "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2158229071,1343073947&fm=26&gp=0.jpg"
       },{
         "key": "4",
         "name": "车间4",
+        "manager": "李赞",
         "WSid": "1003",
         "state": true,
-        "number_all": "300",
-        "number_current": "280",
+        "number_all": "179",
+        "number_current": "169",
         "src": "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2158229071,1343073947&fm=26&gp=0.jpg"
       },{
         "key": "5",
         "name": "车间5",
+        "manager": "王欧",
         "WSid": "1004",
         "state": true,
-        "number_all": "300",
-        "number_current": "280",
+        "number_all": "363",
+        "number_current": "357",
         "src": "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2158229071,1343073947&fm=26&gp=0.jpg"
       },{
         "key": "6",
         "name": "车间6",
+        "manager": "丁计",
         "WSid": "1005",
         "state": true,
-        "number_all": "300",
+        "number_all": "288",
         "number_current": "280",
         "src": "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2158229071,1343073947&fm=26&gp=0.jpg"
       }
