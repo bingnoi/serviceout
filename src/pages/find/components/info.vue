@@ -1,14 +1,13 @@
 <template>
   <div>
     <div class="info-container">
-      <a-avatar :size="100" :src="String(imgSrc)" />
+      <a-avatar :size="100" :src="String(img)" />
       <div class="info-item">
         <div class="info">姓名: {{name}}</div>
         <!-- <div class="info">ID: {{workID}}</div> -->
         <div class="info">车间ID: {{wsID}}</div>
       </div>
     </div>
-
     <a-list item-layout="horizontal" :data-source="data">
       <a-list-item slot="renderItem" slot-scope="item">
         <a-list-item-meta>
@@ -30,7 +29,7 @@ export default {
     name: String,
     workID: String,
     wsID: String,
-    imgSrc:String
+    img:String
   },
   data() {
     return {

@@ -28,7 +28,7 @@
           :name="this.name"
           :workID="this.workID"
           :wsID="this.wsID"
-          :imgSrc="this.imgSrc"
+          :imgSrc="this.img"
           ></info>
       </a-spin>
     </div>
@@ -46,18 +46,20 @@ export default {
       name: '张三钰',
       workID: '10001',
       wsID: '1000',
-      imgSrc:require('../../../static/mock/av-1.jpg'),
+      // imgSrc:require('../../../static/mock/av-1.jpg'),
       data: [
         {
           name: '张三钰',
           workID: '10001',
           wsID: '1000',
+          img:'../../../static/mock/av-1.jpg',
           imgSrc:require('../../../static/mock/av-1.jpg')
         },
         {
           name: '王梦琪',
           workID: '10002',
           wsID: '1001',
+          img:'../../../static/mock/av-1.jpg',
           imgSrc:require('../../../static/mock/av-1.jpg')
         },
         {

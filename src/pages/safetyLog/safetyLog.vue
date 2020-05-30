@@ -132,8 +132,10 @@ export default {
 
 <style scoped>
 .list-container {
-  text-align: left;
-  display: flex;
-  flex-direction: column;
+  width: 95%;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 0 auto;
 }
 </style>
