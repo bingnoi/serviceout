@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="info-container">
-      <a-avatar :size="100" :src="String(img)" />
+      <a-avatar :size="100" :src="String(imgSrc)" />
       <div class="info-item">
         <div class="info">姓名: {{name}}</div>
         <!-- <div class="info">ID: {{workID}}</div> -->
@@ -29,7 +29,7 @@ export default {
     name: String,
     workID: String,
     wsID: String,
-    img:String
+    imgSrc:String
   },
   data() {
     return {

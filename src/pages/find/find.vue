@@ -8,7 +8,7 @@
         <a-list-item slot="renderItem" slot-scope="item">
           <a-list-item-meta
           >
-            <a @click="changeName(item.name,item.imgSrc,item.workID, item.wsID)" slot="title">{{ item.name }}</a>
+            <a @click="changeName(item.name,item.imgSrc,item.workID, item.wsID,item.img)" slot="title">{{ item.name }}</a>
             <a-avatar
               slot="avatar"
               :src="item.imgSrc"
@@ -37,7 +37,6 @@
 
 <script>
 import info from './components/info'
-// import info from '../../../static/mock/av-1.jpg'
 export default {
   name: 'find',
   data () {
@@ -46,6 +45,7 @@ export default {
       name: '张三钰',
       workID: '10001',
       wsID: '1000',
+      img:'../../../static/mock/av-1.jpg',
       // imgSrc:require('../../../static/mock/av-1.jpg'),
       data: [
         {
