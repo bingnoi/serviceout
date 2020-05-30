@@ -4,7 +4,7 @@
       <a-avatar :size="100" :src="String(imgSrc)" />
       <div class="info-item">
         <div class="info">姓名: {{name}}</div>
-        <!-- <div class="info">ID: {{workID}}</div> -->
+        <div class="info">ID: {{workID}}</div>
         <div class="info">车间ID: {{wsID}}</div>
       </div>
     </div>
