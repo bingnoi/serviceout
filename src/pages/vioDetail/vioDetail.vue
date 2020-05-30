@@ -36,6 +36,9 @@
               </a-timeline-item>
             </a-timeline>
           </a-descriptions-item>
+          <a-descriptions-item label="违规原因">
+            未带安全帽
+          </a-descriptions-item>
           <a-descriptions-item label="截图">
             <img src="/api/test1.png" alt="no data yet" style="height: 200px">
           </a-descriptions-item>

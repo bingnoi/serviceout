@@ -26,6 +26,7 @@
           <span slot="title"><a-icon type="user"/><span>基础信息管理</span></span>
           <a-menu-item key="menu-3_sub-1"><router-link to="/workerInfo" style="color: white">工人信息</router-link></a-menu-item>
           <a-menu-item key="menu-3_sub-2"><router-link to="/wsInfo" style="color: white">车间信息</router-link></a-menu-item>
+          <a-menu-item key="menu-3_sub-3"><router-link to="/safetyLog" style="color: white">车间安全日志</router-link></a-menu-item>
         </a-sub-menu>
 
         <a-sub-menu key="menu-4">

@@ -56,7 +56,7 @@ export default {
   methods: {
     handleSubmit () {
       alert('保存成功!')
-      this.$router.push('/wslist')
+      this.$router.push('/safetyLog')
     },
     onSubmit () {
       console.log('submit!', this.form)

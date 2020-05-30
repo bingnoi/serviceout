@@ -1,5 +1,6 @@
 <template>
   <div class="list-container">
+    <h2>工人信息查询</h2>
     <a-table :data-source="data" :columns="columns">
       <div
         slot="filterDropdown"

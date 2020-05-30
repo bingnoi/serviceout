@@ -45,7 +45,7 @@
               正在处理
             </a-select-option>
             <a-select-option value="female">
-              以处理
+              已处理
             </a-select-option>
           </a-select>
         </a-form-item>
@@ -77,7 +77,7 @@ export default {
       this.form.validateFields((err, values) => {
         if (!err) {
           alert('提交成功')
-          this.$router.push('/')
+          this.$router.push('/vioManage')
         }
       })
     },

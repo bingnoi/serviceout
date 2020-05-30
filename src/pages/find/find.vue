@@ -8,12 +8,12 @@
         <a-list-item slot="renderItem" slot-scope="item">
           <a-list-item-meta
           >
-            <a @click="changeName(item.name, item.ID, item.wsID)" slot="title">{{ item.name }}</a>
+            <a @click="changeName(item.name,item.imgSrc,item.workID, item.wsID)" slot="title">{{ item.name }}</a>
             <a-avatar
               slot="avatar"
-              src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+              :src="item.imgSrc"
             />
-            <span slot="description" style="margin-right: 30px;">工人id: {{item.ID}}</span>
+            <span slot="description" style="margin-right: 30px;">工人id: {{item.workID}}</span>
             <span slot="description">所属车间: {{item.wsID}}</span>
           </a-list-item-meta>
         </a-list-item>
@@ -26,8 +26,9 @@
       <a-spin :spinning="spin">
         <info
           :name="this.name"
-          :ID="this.ID"
+          :workID="this.workID"
           :wsID="this.wsID"
+          :imgSrc="this.imgSrc"
           ></info>
       </a-spin>
     </div>
@@ -36,92 +37,106 @@
 
 <script>
 import info from './components/info'
-
+// import info from '../../../static/mock/av-1.jpg'
 export default {
   name: 'find',
   data () {
     return {
       spin: false,
-      name: '张三',
-      ID: '10001',
+      name: '张三钰',
+      workID: '10001',
       wsID: '1000',
+      imgSrc:require('../../../static/mock/av-1.jpg'),
       data: [
         {
-          name: '张三',
-          ID: '10001',
-          wsID: '1000'
+          name: '张三钰',
+          workID: '10001',
+          wsID: '1000',
+          imgSrc:require('../../../static/mock/av-1.jpg')
         },
         {
-          name: '王五',
-          ID: '10002',
-          wsID: '1001'
+          name: '王梦琪',
+          workID: '10002',
+          wsID: '1001',
+          imgSrc:require('../../../static/mock/av-1.jpg')
         },
         {
-          name: '张三',
-          ID: '10001',
-          wsID: '1000'
+          name: '余亦寒',
+          workID: '10003',
+          wsID: '1000',
+          imgSrc:require('../../../static/mock/av-1.jpg')
         },
         {
-          name: '张三',
-          ID: '10001',
-          wsID: '1000'
+          name: '李寻真',
+          workID: '10004',
+          wsID: '1000',
+          imgSrc:require('../../../static/mock/av-3.jpg')
         },
         {
-          name: '张三',
-          ID: '10001',
-          wsID: '1000'
+          name: '赵代真',
+          workID: '10005',
+          wsID: '1000',
+          imgSrc:require('../../../static/mock/av-3.jpg')
         },
         {
-          name: '张三',
-          ID: '10001',
-          wsID: '1000'
+          name: '张冷卉',
+          workID: '10006',
+          wsID: '1000',
+          imgSrc:require('../../../static/mock/av-3.jpg')
         },
         {
-          name: '张三',
-          ID: '10001',
-          wsID: '1000'
+          name: '钱访琴',
+          workID: '10007',
+          wsID: '1000',
+          imgSrc:require('../../../static/mock/av-2.jpg')
         },
         {
-          name: '张三',
-          ID: '10001',
-          wsID: '1000'
+          name: '王雁玉',
+          workID: '10008',
+          wsID: '1000',
+          imgSrc:require('../../../static/mock/av-2.jpg')
         },
         {
-          name: '张三',
-          ID: '10001',
-          wsID: '1000'
+          name: '丁翠柔',
+          workID: '10009',
+          wsID: '1000',
+          imgSrc:require('../../../static/mock/av-2.jpg')
         },
         {
-          name: '张三',
-          ID: '10001',
-          wsID: '1000'
+          name: '李千兰',
+          workID: '10010',
+          wsID: '1000',
+          imgSrc:require('../../../static/mock/av-3.jpg')
         },
         {
-          name: '张三',
-          ID: '10001',
-          wsID: '1000'
+          name: '任寻文',
+          workID: '10011',
+          wsID: '1000',
+          imgSrc:require('../../../static/mock/av-1.jpg')
         },
         {
-          name: '张三',
-          ID: '10001',
-          wsID: '1000'
+          name: '张怀蝶',
+          workID: '10012',
+          wsID: '1000',
+          imgSrc:require('../../../static/mock/av-2.jpg')
         },
         {
-          name: '张三',
-          ID: '10001',
-          wsID: '1000'
+          name: '邱乐菱',
+          workID: '10013',
+          wsID: '1000',
+          imgSrc:require('../../../static/mock/av-3.jpg')
         }
       ]
     }
   },
   methods: {
     changeName (e, f, g) {
-      console.log(f)
+      // console.log(f)
       this.spin = true
       setTimeout(() => {
         this.spin = false
         this.name = e
-        this.ID = f
+        this.workID = f
         this.wsID = g
       }, 1000)
     }
