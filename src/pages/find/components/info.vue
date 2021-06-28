@@ -35,32 +35,32 @@ export default {
     return {
       data: [
         {
-          title: "2020.5.24",
+          title: "2021.4.24",
           type: "上班",
           time: "07:00"
         },
         {
-          title: "2020.5.24",
+          title: "2021.4.23",
           type: "下班",
           time: "18:00"
         },
         {
-          title: "2020.5.23",
+          title: "2021.4.22",
           type: "上班",
           time: "07:00"
         },
         {
-          title: "2020.5.23",
+          title: "2021.4.21",
           type: "下班",
           time: "18:00"
         },
         {
-          title: "2020.5.22",
+          title: "2021.4.20",
           type: "上班",
           time: "07:00"
         },
         {
-          title: "2020.5.22",
+          title: "2021.4.19",
           type: "下班",
           time: "18:00"
         }

@@ -19,7 +19,7 @@
             margin: '0 32px',
           }"
             />
-            <a-statistic title="电话" value="12344534567" />
+            <a-statistic title="电话" value="18673865543" />
           </a-row>
         </a-page-header>
       </div>

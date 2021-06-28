@@ -2,7 +2,9 @@
   <div>
     <a-row type="flex">
       <div class="left">
-        <a-row>
+
+        <!-- 这是水滴图 -->
+        <!-- <a-row>
           <div class="box1">
             <ve-liquidfill
               :data="waterchartData"
@@ -11,8 +13,14 @@
               height="250px"
             ></ve-liquidfill>
           </div>
+        </a-row> -->
+        <a-row style="background-color:#D2E9FF;opacity:70%;margin-top:10px;margin-left:5px">
+          <p style="font-size:15px;font-weight:bold">实时到岗人数</p>
+          <dv-water-level-pond :config="waterconfig" style="width:200px;height:200px" />
         </a-row>
-        <a-row>
+
+        <!-- 实时安全状态 -->
+        <!-- <a-row>
           <div class="box1">
             <ve-gauge
               :title="chart2Title"
@@ -23,8 +31,16 @@
               height="250px"
             ></ve-gauge>
           </div>
+        </a-row> -->
+        <a-row style="background-color:#D2E9FF;opacity:70%;margin-top:20px;margin-left:5px">
+          <p style="font-size:15px;font-weight:bold">实时安全状态</p>
+          <dv-decoration-9 style="width:200px;height:200px;" :dur="6" :color="['#130c0e','#102b6a']">
+            <p style="font-size:25px;font-weight:bold">96%</p>
+          </dv-decoration-9>
         </a-row>
       </div>
+
+      <!-- 这里是pop-bar的信息 -->
       <div>
         <a-col>
           <div class="prop1">
@@ -48,13 +64,18 @@
             </a-popover>
           </div>
           <div class="prop4">
-            <a-popover title="车间4">
-              <template slot="content">
+            <a-popover title="车间4" v-model="visible">
+              <template v-if="nsafe" slot="content">
                 <p>工作状态：正常</p>
                 <p>安全状态：中</p>
                 <p>负责人：李赞 1874525363627</p>
               </template>
-              <a-button type="primary">车间4</a-button>
+              <template v-if="!nsafe" slot="content">
+                <p style="color:red">工作状态：危险</p>
+                <p style="color:red">安全警告：检测到未佩戴安全帽</p>
+                <p style="color:red">负责人：李赞 1874525363627</p>
+              </template>
+              <a-button :type=nsafeColor>车间4</a-button>
             </a-popover>
           </div>
         </a-col>
@@ -88,16 +109,20 @@
                 <p>安全状态：中</p>
                 <p>负责人：丁计 1874525363627</p>
               </template>
-              <a-button type="primary">车间6</a-button>
+              <a-button type='primary'>车间6</a-button>
             </a-popover>
           </div>
         </a-col>
       </div>
     </a-row>
 
+
+    
     <a-row>
       <div class="box2">
-        <a-col>
+
+        <!-- 出勤日志 -->
+        <!-- <a-col>
           <div class="log">
             <ve-line
               :title="chart3Title"
@@ -109,8 +134,13 @@
               height="300px"
             ></ve-line>
           </div>
-        </a-col>
+        </a-col> -->
+
+        <!-- 要改成信息滚动栏 -->
         <a-col>
+          <dv-scroll-board :config="config" style="width:1000px;height:200px;margin-top:100px" />
+        </a-col>
+        <!-- <a-col>
           <div class="list-container">
             <a-table :data-source="data" :columns="columns">
               <div
@@ -164,7 +194,7 @@
               </template>
             </a-table>
           </div>
-        </a-col>
+        </a-col> -->
       </div>
     </a-row>
   </div>
@@ -178,15 +208,15 @@ const data = [
     key: "1",
     name: "1",
     age: "车间1",
-    wsID: "2020.1.10 12:00",
-    vioTime: "未佩戴安全帽",
+    wsID: "2021.4.10 12:00",
+    vioTime: "检测到烟火",
     entryTime: "2018 1 1"
   },
   {
     key: "2",
     name: "2",
     age: "车间2",
-    wsID: "2020.1.10 12:00",
+    wsID: "2021.4.09 12:00",
     vioTime: "未佩戴安全帽",
     workDay: 31,
     showDay: 30,
@@ -196,7 +226,7 @@ const data = [
     key: "3",
     name: "3",
     age: "车间3",
-    wsID: "2020.1.10 12:00",
+    wsID: "2021.4.08 12:00",
     vioTime: "未佩戴安全帽",
     workDay: 31,
     showDay: 30,
@@ -207,6 +237,66 @@ export default {
   name: "attendence",
   data() {
     return {
+      visible:false,
+      nsafe:true,
+      nsafeColor:'primary',
+      config:{
+        header: ['车间', '违规时间', '报警原因','车间主任'],
+        headerBGC:'#009ad6',
+        oddRowBGC:'#508a88',
+        evenRowBGC:'#70a19f',	
+        waitTime:1500,
+        data: [
+          ['10000', '2021.4.08 12:00', '未佩戴安全帽','李菲菲'],
+          ['10001', '2021.4.07 12:00', '未佩戴安全帽','高任'],
+          ['10002', '2021.4.06 12:00', '未佩戴安全帽','杨于'],
+          ['10002', '2021.4.06 12:00', '未佩戴安全帽','杨于'],
+          ['10000', '2021.4.08 12:00', '未佩戴安全帽','李菲菲'],
+          ['10001', '2021.4.07 12:00', '未佩戴安全帽','高任'],
+          ['10002', '2021.4.06 12:00', '未佩戴安全帽','杨于'],
+          ['10000', '2021.4.08 12:00', '未佩戴安全帽','李菲菲'],
+          ['10001', '2021.4.07 12:00', '未佩戴安全帽','高任'],
+          ['10002', '2021.4.06 12:00', '未佩戴安全帽','杨于'],
+        ],
+      },
+      waterconfig:{
+        data: [95],
+        shape: 'roundRect',
+        colors:['black','black']
+      },
+      safeoption:{
+        series: [
+          {
+            type: 'gauge',
+            startAngle: -Math.PI / 2,
+            endAngle: Math.PI * 1.5,
+            arcLineWidth: 25,
+            data: [
+              { name: 'itemA', value: 89, gradient: ['#03c2fd', '#1ed3e5', '#2fded6'] }
+            ],
+            axisLabel: {
+              show: false
+            },
+            axisTick: {
+              show: false
+            },
+            pointer: {
+              show: false
+            },
+            dataItemStyle: {
+              lineCap: 'round'
+            },
+            details: {
+              show: true,
+              formatter: '{value}%',
+              style: {
+                  fill: '#1ed3e5',
+                  fontSize: 35
+              }
+            }
+          }
+        ]
+      },
       chart1Title: {
         text: "在岗人数"
       },
@@ -428,10 +518,18 @@ export default {
     alter() {
       this.$refs.chartEl.resize();
       this.$refs.chartE2.resize();
+    },
+    countDown(){
+      let clock=window.setInterval(()=>{
+        this.nsafe=false,
+        this.nsafeColor='danger',
+        this.visible=true
+      },8000);
     }
   },
   mounted() {
     window.addEventListener("resize", this.alter);
+    this.countDown();
   },
   beforeDestroy() {
     window.removeEventListener("resize", this.alter);
@@ -469,7 +567,7 @@ export default {
   margin-bottom: 2px;
 }
 .left {
-  width: 30%;
+  width: 20%;
 }
 .log {
   opacity: 0.8;

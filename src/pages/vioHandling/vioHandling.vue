@@ -22,13 +22,13 @@
     </div>
 
     <div style="margin: 20px; margin-left: 60px;">
-      <a-form :form="form" :label-col="{ span: 5 }" :wrapper-col="{ span: 18 }" @submit="handleSubmit">
-        <a-form-item label="违规人员id:">
+      <a-form :form="form" :label-col="{ span: 6 }" :wrapper-col="{ span: 18 }" @submit="handleSubmit">
+        <a-form-item label="违规人员:">
           <a-input
             v-decorator="['note', { rules: [{ required: true, message: '请输入对应违规人员id!' }] }]"
           />
         </a-form-item>
-        <a-form-item label="wow">
+        <a-form-item label="违规事件">
           <a-input
             v-decorator="['wow', { rules: [{ required: true, message: '请输入对应违规人员id!' }] }]"
           />

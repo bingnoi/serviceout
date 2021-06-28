@@ -8,8 +8,11 @@ import 'ant-design-vue/dist/antd.css'
 import VideoPlayer from 'vue-video-player'
 import VCharts from 'v-charts'
 import 'videojs-flash'
+import dataV from '@jiaminghi/data-view'
+
 Vue.config.productionTip = false
 
+Vue.use(dataV)
 Vue.use(Antd)
 Vue.use(VideoPlayer)
 Vue.use(VCharts)
