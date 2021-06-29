@@ -2,11 +2,11 @@
 
 ## 介绍
 项目旨在解决车间作业中的安全问题，引入Yolov3作为视觉视觉模块，同时使用Egg.js作为项目后端，Vue+Three.js为项目前端框架。
-
+![项目结构图](https://github.com/bingnoi/serviceout/blob/master/pics/architeture.png)
 #### 视觉算法
 
 #### 效果展示
-
+![检测效果](https://github.com/bingnoi/serviceout/blob/master/pics/yolov3_demo.png)
 
 #### 参与贡献
 
