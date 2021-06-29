@@ -6,7 +6,7 @@
 #### 视觉算法
 
 #### 效果展示
-！[检测效果](https://github.com/bingnoi/serviceout/blob/master/pics/yolov3_demo.png)
+![检测效果](https://github.com/bingnoi/serviceout/blob/master/pics/yolov3_demo.png)
 
 #### 参与贡献
 
