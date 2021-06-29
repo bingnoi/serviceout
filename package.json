@@ -16,7 +16,7 @@
     "ant-design-vue": "^1.5.3",
     "axios": "^0.19.2",
     "echarts": "^4.7.0",
-    "three": "^0.115.0",
+    "three": "^0.125.0",
     "v-charts": "^1.19.0",
     "video.js": "^7.7.5",
     "videojs-contrib-hls": "^5.15.0",
