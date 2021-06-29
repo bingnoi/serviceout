@@ -14,7 +14,7 @@
     "@jiaminghi/charts": "^0.2.18",
     "@jiaminghi/data-view": "^2.10.0",
     "ant-design-vue": "^1.5.3",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "echarts": "^4.7.0",
     "three": "^0.115.0",
     "v-charts": "^1.19.0",
